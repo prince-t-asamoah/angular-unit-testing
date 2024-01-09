@@ -8,8 +8,17 @@ describe('CalculatorService', () => {
 
     const result = calculator.add(2, 2);
     expectedResult = 4;
-    
+
     expect(result).toBe(expectedResult);
   });
-  xit('should subtract two numbers', () => {});
+
+  it('should subtract two numbers', () => {
+    let expectedResult: number;
+    const calculator = new CalculatorService();
+
+    const result = calculator.subtract(2, 2);
+    expectedResult = 0;
+
+    expect(result).toBe(expectedResult);
+  });
 });
