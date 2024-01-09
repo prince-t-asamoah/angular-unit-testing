@@ -1,10 +1,14 @@
+import { LoggerService } from '../logger/logger.service';
 import { CalculatorService } from './calculator.service';
 
 describe('CalculatorService', () => {
   //using xit and pending in test case body disable test case
+
+  const loggerService = new LoggerService();
+
   it('should add two numbers', () => {
     let expectedResult: number;
-    const calculator = new CalculatorService();
+    const calculator = new CalculatorService(loggerService);
 
     const result = calculator.add(2, 2);
     expectedResult = 4;
@@ -14,7 +18,7 @@ describe('CalculatorService', () => {
 
   it('should subtract two numbers', () => {
     let expectedResult: number;
-    const calculator = new CalculatorService();
+    const calculator = new CalculatorService(loggerService);
 
     const result = calculator.subtract(2, 2);
     expectedResult = 0;
