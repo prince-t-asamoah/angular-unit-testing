@@ -1,1 +1,11 @@
-<p>post works!</p>
+<ol>
+  @for(post of posts; track $index ) {
+  <li>
+    <section class="post">
+      <h2 class="title">{{ post.title }}</h2>
+      <p class="body">{{ post.body }}</p>
+      <button type="button">Delete</button>
+    </section>
+  </li>
+  }
+</ol>
