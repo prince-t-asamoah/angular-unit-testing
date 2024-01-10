@@ -1,22 +1,21 @@
-import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Post } from '../../model/post';
+import PostData from '../../mock/posts.json';
 
 @Injectable({
   providedIn: 'root',
 })
 export class PostService {
-  constructor(private _httpClient: HttpClient) {}
+  constructor() {}
 
-  getPosts() {
-    return this._httpClient.get<Post[]>(
-      'https://jsonplaceholder.typicode.com/posts'
-    );
+  getPosts(): Post[] {
+    return PostData;
   }
 
-  deletePost(post: Post) {
-    return this._httpClient.delete(
-      `https://jsonplaceholder.typicode.com/post/${post.id}`
+  deletePost(post: Post): Post[] {
+    const filteredPostData = PostData.filter(
+      (postItem) => postItem.id !== post.id
     );
+    return filteredPostData;
   }
 }
