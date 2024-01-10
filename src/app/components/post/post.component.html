@@ -4,7 +4,7 @@
     <section class="post">
       <h2 class="title">{{ post.title }}</h2>
       <p class="body">{{ post.body }}</p>
-      <button type="button">Delete</button>
+      <button type="button" (click)="deletePost(post)">Delete</button>
     </section>
   </li>
   }
