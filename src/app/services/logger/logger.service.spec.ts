@@ -17,4 +17,10 @@ describe('LoggerService', () => {
     loggerService.log('message');
     expect(loggerService.messages.length).toBe(1);
   });
+
+  it('should clear all messages when clear is called', () => {
+    loggerService.log('message');
+    loggerService.clear();
+    expect(loggerService.messages.length).toBe(0);
+  })
 });
