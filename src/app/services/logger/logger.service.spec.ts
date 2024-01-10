@@ -1,16 +1,9 @@
-import { TestBed } from '@angular/core/testing';
-
 import { LoggerService } from './logger.service';
 
 describe('LoggerService', () => {
-  let service: LoggerService;
-
-  beforeEach(() => {
-    TestBed.configureTestingModule({});
-    service = TestBed.inject(LoggerService);
-  });
-
-  it('should be created', () => {
-    expect(service).toBeTruthy();
+  it('should start with no message', () => {
+    const loggerService = new LoggerService();
+    let messagesCount = loggerService.messages.length;
+    expect(messagesCount).toBe(0);
   });
 });
