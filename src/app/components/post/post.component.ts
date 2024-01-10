@@ -19,13 +19,10 @@ export class PostComponent implements OnInit {
   }
 
   getAllPosts(): void {
-    this._postService.getPosts().subscribe((posts) => {
-      this.posts = posts;
-    });
+    this.posts = this._postService.getPosts();
   }
 
   deletePost(post: Post) {
-    this.posts = this.posts.filter(postItem => postItem.id !== post.id);
-    this._postService.deletePost(post).subscribe();
+    this.posts = this._postService.deletePost(post);
   }
 }
